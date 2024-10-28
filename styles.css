@@ -1,123 +1,225 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #181818;
-    font-family: 'Arial', sans-serif;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.business-card {
-    width: 3.5in;
-    height: 2in;
-    background: linear-gradient(135deg, #2c3e50, #34495e);
-    color: #ecf0f1;
-    border-radius: 15px; 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    padding: 5px; 
-    text-align: center;
-    position: relative;
-    margin: 5px 0; 
-    overflow: hidden; 
-}
-
-.card-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative; 
-    z-index: 2; 
-}
-
-.card-content.front h1 {
+* {
     margin: 0;
-    font-size: 1.5em; 
-    font-family: 'Georgia', serif; 
-    color: #FFD700; 
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); 
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.card-content.front .title {
-    font-weight: 400;
-    font-size: 1em; 
-    margin: 1px 0; 
-    color: #bdc3c7; 
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    line-height: 1.6;
 }
 
-.contact-info {
-    margin: 3px 0; 
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #4B3C7A; /* Dark luxurious color */
+    color: white;
+    text-align: center;
+    padding: 0 2em;
 }
 
-.contact-info p {
-    margin: 0; 
-    font-size: 0.9em; 
-    color: #95a5a6; 
+.hero-content {
+    max-width: 600px;
 }
 
-.footer {
-    font-size: 0.8em; 
-    color: #ecf0f1; 
-    margin-top: 2px; 
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 0.5em;
+    font-family: 'Playfair Display', serif;
 }
 
-.footer::before {
-    content: '';
-    display: block;
-    height: 1px; 
-    background-color: #FFD700; 
-    margin: 2px 0; 
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 1em;
 }
 
-.card-content.back {
-    border-top: 1px solid #FFD700; 
-    padding-top: 3px; 
-}
-
-.card-content.back h2 {
-    font-size: 1.2em; 
-    color: #FFD700; 
-    margin: 0 0 2px 0; 
-}
-
-.card-content.back .tagline {
-    font-style: italic; 
-    margin: 2px 0; 
-    color: #ecf0f1; 
-}
-
-.business-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); 
-    opacity: 0.15; 
-    z-index: 1; 
-}
-
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #FFD700;
-    color: #2c3e50;
+.hero button {
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+    background-color: #FFD700; /* Gold color */
+    color: #4B3C7A;
     border: none;
     border-radius: 5px;
-    font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #e6b800;
+    .hero button:hover {
+        background-color: #FFC107; /* Lighter gold on hover */
+    }
+
+/* Designs Section */
+.designs {
+    padding: 3em 1em;
+    text-align: center;
+}
+
+    .designs h2 {
+        font-size: 2.5em;
+        margin-bottom: 0.5em;
+        color: #4B3C7A;
+    }
+
+    .designs p {
+        font-size: 1.1em;
+        margin-bottom: 2em;
+    }
+
+.design-grid {
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.design-card {
+    border: 2px solid #FFD700; /* Gold border */
+    border-radius: 8px;
+    padding: 2em;
+    background-color: #f9f9f9; /* Light background */
+    text-align: center; /* Center-align text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .design-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+.design-image {
+    max-width: 100%; /* Ensure image is responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for the image */
+    margin-bottom: 1em; /* Space between image and text */
+}
+
+.design-info h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.5em;
+}
+
+.design-info p {
+    font-size: 1.2em;
+    color: #4B3C7A; /* Price color */
+}
+
+.design-info button {
+    padding: 0.5em 1em;
+    background-color: #4B3C7A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .design-info button:hover {
+        background-color: #5D4A91; /* Darker shade on hover */
+    }
+
+/* How It Works Section */
+.how-it-works {
+    padding: 3em 1em;
+    background-color: #f0f0f0; /* Light grey */
+    text-align: center;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5em;
+}
+
+.step {
+    width: 30%;
+}
+
+    .step h3 {
+        font-size: 1.5em;
+        margin-bottom: 0.5em;
+        font-family: 'Playfair Display', serif;
+    }
+
+/* Testimonials Section */
+.testimonials {
+    padding: 3em 1em;
+    text-align: center;
+}
+
+.testimonial {
+    font-style: italic;
+    margin-bottom: 1em;
+}
+
+/* About Us Section */
+.about {
+    padding: 3em 1em;
+    text-align: center;
+    background-color: #f0f0f0; /* Light grey */
+}
+
+    .about button {
+        padding: 0.8em 1.5em;
+        font-size: 1em;
+        background-color: #4B3C7A;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .about button:hover {
+            background-color: #5D4A91; /* Darker shade on hover */
+        }
+
+/* Footer Section */
+.footer {
+    padding: 2em 1em;
+    background-color: #4B3C7A; /* Dark color */
+    color: white;
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 1em;
+}
+
+    .footer-links a {
+        margin: 0 1em;
+        color: #FFD700; /* Gold */
+        text-decoration: none;
+    }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Track background color */
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4B3C7A; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #5D4A91; /* Darker shade on hover */
+    }
+
+/* For Firefox */
+html {
+    scrollbar-width: thin; /* Makes the scrollbar thinner */
+    scrollbar-color: #4B3C7A #f0f0f0; /* Thumb and track color */
 }
