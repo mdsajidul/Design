@@ -1,12 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luxurious Business Card</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.0.0-alpha.12/html2canvas.min.js"></script>
-    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -21,7 +20,7 @@
                 <p class="footer">LinkedIn: @johndoe</p>
             </div>
         </div>
-
+        
         <div class="business-card back" id="businessCardBack">
             <div class="card-content">
                 <h2>About Me</h2>
@@ -31,5 +30,32 @@
 
         <button id="downloadBtn">Download Designs</button>
     </div>
+
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function () {
+            const frontCard = document.getElementById('businessCardFront');
+            const backCard = document.getElementById('businessCardBack');
+            
+            html2canvas(frontCard, { useCORS: true, scale: 2 }).then(function (canvas) {
+                const frontImage = canvas.toDataURL("image/png");
+                const link = document.createElement("a");
+                link.href = frontImage;
+                link.download = "business_card_front.png";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+
+            html2canvas(backCard, { useCORS: true, scale: 2 }).then(function (canvas) {
+                const backImage = canvas.toDataURL("image/png");
+                const link = document.createElement("a");
+                link.href = backImage;
+                link.download = "business_card_back.png";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+        });
+    </script>
 </body>
 </html>
