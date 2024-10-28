@@ -1,0 +1,123 @@
+﻿body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #181818;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.business-card {
+    width: 3.5in;
+    height: 2in;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #ecf0f1;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    text-align: center;
+    position: relative;
+    margin: 5px 0;
+    overflow: hidden;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+    .card-content.front h1 {
+        margin: 0;
+        font-size: 1.5em;
+        font-family: 'Georgia', serif;
+        color: #FFD700;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .card-content.front .title {
+        font-weight: 400;
+        font-size: 1em;
+        margin: 1px 0;
+        color: #bdc3c7;
+    }
+
+.contact-info {
+    margin: 3px 0;
+}
+
+    .contact-info p {
+        margin: 0;
+        font-size: 0.9em;
+        color: #95a5a6;
+    }
+
+.footer {
+    font-size: 0.8em;
+    color: #ecf0f1;
+    margin-top: 2px;
+}
+
+    .footer::before {
+        content: '';
+        display: block;
+        height: 1px;
+        background-color: #FFD700;
+        margin: 2px 0;
+    }
+
+.card-content.back {
+    border-top: 1px solid #FFD700;
+    padding-top: 3px;
+}
+
+    .card-content.back h2 {
+        font-size: 1.2em;
+        color: #FFD700;
+        margin: 0 0 2px 0;
+    }
+
+    .card-content.back .tagline {
+        font-style: italic;
+        margin: 2px 0;
+        color: #ecf0f1;
+    }
+
+.business-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    opacity: 0.15;
+    z-index: 1;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #FFD700;
+    color: #2c3e50;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    button:hover {
+        background-color: #e6b800;
+    }
