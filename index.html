@@ -3,59 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxurious Business Card</title>
+    <title>Luxurious Business Card Designs | Bangladesh</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="business-card front" id="businessCardFront">
-            <div class="card-content">
-                <h1>John Doe</h1>
-                <p class="title">Creative Director</p>
-                <div class="contact-info">
-                    <p class="email">john.doe@example.com</p>
-                    <p class="phone">+123 456 7890</p>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Elevate Your Brand with Luxurious Business Cards</h1>
+            <p>Exquisite designs that resonate with your identity.</p>
+            <button onclick="scrollToSection('designs')">Explore Designs</button>
+        </div>
+    </section>
+
+    <!-- Featured Designs Section -->
+    <section id="designs" class="designs">
+        <h2>Curated Designs for the Discerning Professional</h2>
+        <p>Choose from an exclusive collection crafted to reflect your elegance and style.</p>
+        <div class="design-grid">
+            <div class="design-card">
+                <img src="Design 1.jpg" alt="Minimalist Elegance" class="design-image">
+                <div class="design-info">
+                    <h3>Minimalist Elegance</h3>
+                    <p>৳ 1,500</p>
+                    <button>Customize This</button>
                 </div>
-                <p class="footer">LinkedIn: @johndoe</p>
+            </div>
+            <div class="design-card">
+                <img src="Design 1.jpg" alt="Timeless Classic" class="design-image">
+                <div class="design-info">
+                    <h3>Timeless Classic</h3>
+                    <p>৳ 1,800</p>
+                    <button>Customize This</button>
+                </div>
+            </div>
+            <div class="design-card">
+                <img src="Design 1.jpg" alt="Chic Modern" class="design-image">
+                <div class="design-info">
+                    <h3>Chic Modern</h3>
+                    <p>৳ 1,700</p>
+                    <button>Customize This</button>
+                </div>
+            </div>
+            <div class="design-card">
+                <img src="Design 1.jpg" alt="Artisan Crafted" class="design-image">
+                <div class="design-info">
+                    <h3>Artisan Crafted</h3>
+                    <p>৳ 2,000</p>
+                    <button>Customize This</button>
+                </div>
             </div>
         </div>
-        
-        <div class="business-card back" id="businessCardBack">
-            <div class="card-content">
-                <h2>About Me</h2>
-                <p class="tagline">"Creating Beautiful Experiences"</p>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <h2>Simple Steps to Your Luxurious Business Card</h2>
+        <div class="steps">
+            <div class="step">
+                <h3>1. Select Your Design</h3>
+                <p>Browse our curated collection of luxurious designs.</p>
+            </div>
+            <div class="step">
+                <h3>2. Customize Your Card</h3>
+                <p>Tailor your card with premium options for text and finish.</p>
+            </div>
+            <div class="step">
+                <h3>3. Complete Your Order</h3>
+                <p>Finalize your order and prepare to impress your clients.</p>
             </div>
         </div>
+        <button onclick="scrollToSection('designs')">Get Started</button>
+    </section>
 
-        <button id="downloadBtn">Download Designs</button>
-    </div>
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial">
+            <p>"The quality and design of these cards are exceptional. I’ve received countless compliments!"</p>
+            <p>- Sultana A.</p>
+        </div>
+        <div class="testimonial">
+            <p>"Absolutely love my new business cards! They reflect my brand beautifully."</p>
+            <p>- Arif M.</p>
+        </div>
+    </section>
 
-    <script>
-        document.getElementById('downloadBtn').addEventListener('click', function () {
-            const frontCard = document.getElementById('businessCardFront');
-            const backCard = document.getElementById('businessCardBack');
-            
-            html2canvas(frontCard, { useCORS: true, scale: 2 }).then(function (canvas) {
-                const frontImage = canvas.toDataURL("image/png");
-                const link = document.createElement("a");
-                link.href = frontImage;
-                link.download = "business_card_front.png";
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            });
+    <!-- About Us Section -->
+    <section class="about">
+        <h2>About Our Brand</h2>
+        <p>We specialize in creating luxurious business card designs that reflect your unique identity. Our commitment to quality and craftsmanship sets us apart in Bangladesh.</p>
+        <button onclick="scrollToSection('contact')">Discover Our Process</button>
+    </section>
 
-            html2canvas(backCard, { useCORS: true, scale: 2 }).then(function (canvas) {
-                const backImage = canvas.toDataURL("image/png");
-                const link = document.createElement("a");
-                link.href = backImage;
-                link.download = "business_card_back.png";
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            });
-        });
-    </script>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#hero">Home</a>
+            <a href="#designs">Shop</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#faq">FAQ</a>
+        </div>
+        <p>Contact us: support@businesscards.com</p>
+        <p>&copy; 2024 Luxurious Business Card Designs, Bangladesh</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
