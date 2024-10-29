@@ -3,34 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freelance Marketplace</title>
+    <title>Your Business Services</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <header class="header">
-        <h1>Freelance Marketplace</h1>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="#">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#profile">Profile</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home" class="hero">
+    <section class="hero">
         <div class="hero-content">
-            <h2>Find Your Services Here</h2>
-            <p>Connect with top freelancers from around the world.</p>
+            <h2>Welcome to Our Design Services</h2>
+            <p>Your one-stop solution for premium business designs.</p>
             <div class="search-bar">
-                <input type="text" id="search" placeholder="Search for your gig...">
-                <button onclick="searchGig()">Search</button>
+                <input type="text" placeholder="Search for designs...">
+                <button>Search</button>
             </div>
         </div>
     </section>
@@ -40,31 +33,29 @@
         <div class="service-grid">
             <div class="service-card">
                 <h3>Business Card</h3>
-                <p>Create the best designs for your brand.</p>
-                <button onclick="viewService('business_card')">Next</button>
+                <p>Get a premium business card design to elevate your professional image.</p>
+                <button onclick="location.href='business-card.html'">Next</button>
             </div>
             <div class="service-card">
-                <h3>CV Design</h3>
-                <p>Get a professional CV designed just for you.</p>
-                <button onclick="viewService('cv_design')">Next</button>
+                <h3>CV</h3>
+                <p>Craft a stunning CV that stands out to employers.</p>
+                <button onclick="location.href='cv.html'">Next</button>
             </div>
             <div class="service-card">
                 <h3>Website Theme</h3>
-                <p>Design attractive website themes for your business.</p>
-                <button onclick="viewService('website_theme')">Next</button>
+                <p>Design a beautiful website theme for your business.</p>
+                <button onclick="location.href='website-theme.html'">Next</button>
             </div>
         </div>
     </section>
 
     <section id="about">
         <h2>About Us</h2>
-        <p>We are a community of top freelancers and business owners. Our goal is to ensure the best service for every user.</p>
+        <p>We are dedicated to providing top-notch design services to help you succeed in your business endeavors.</p>
     </section>
 
     <footer>
-        <p>&copy; 2024 Freelance Marketplace. All rights reserved.</p>
+        <p>&copy; 2024 Your Company Name. All Rights Reserved.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
