@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customizable Business Card</title>
+  <link rel="stylesheet" href="card2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMh0pI1x+6qJ8eB64/hD5D2LwI7fT9U5C3hrC1" crossorigin="anonymous">
+</head>
+<body>
+  
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h3>Customize Your Card</h3>
+    <form id="cardForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" oninput="updateCard()" />
+
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" placeholder="Enter your title" oninput="updateCard()" />
+
+      <label for="company">Company:</label>
+      <input type="text" id="company" name="company" placeholder="Enter company name" oninput="updateCard()" />
+
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" name="phone" placeholder="Enter phone number" oninput="updateCard()" />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter email" oninput="updateCard()" />
+
+      <label for="website">Website:</label>
+      <input type="text" id="website" name="website" placeholder="Enter website" oninput="updateCard()" />
+
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description" placeholder="Enter description" oninput="updateCard()" />
+    </form>
+  </div>
+
+  <!-- Business Cards Container -->
+  <div class="business-cards-container">
+    <!-- Business Card Front Side -->
+    <div class="business-card">
+      <div class="info">
+        <h2 id="cardName">John Doe</h2>
+        <p class="title" id="cardTitle">Software Developer</p>
+        <p class="company" id="cardCompany">Tech Solutions Inc.</p>
+        <div class="contact-info">
+          <p class="contact" id="cardPhone"><i class="fas fa-phone"></i> +123 456 7890</p>
+          <p class="contact" id="cardEmail"><i class="fas fa-envelope"></i> john.doe@example.com</p>
+          <p class="contact" id="cardWebsite"><i class="fas fa-globe"></i> www.techsolutions.com</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Business Card Back Side -->
+    <div class="business-card back">
+      <div class="back-info">
+        <p id="cardDescription">Passionate about coding.</p>
+        <p class="social">
+          <a href="https://linkedin.com/in/johndoe" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/johndoe" target="_blank"><i class="fab fa-github"></i></a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updateCard() {
+      const name = document.getElementById("name").value;
+      const title = document.getElementById("title").value;
+      const company = document.getElementById("company").value;
+      const phone = document.getElementById("phone").value;
+      const email = document.getElementById("email").value;
+      const website = document.getElementById("website").value;
+      const description = document.getElementById("description").value;
+
+      document.getElementById("cardName").textContent = name || "John Doe";
+      document.getElementById("cardTitle").textContent = title || "Software Developer";
+      document.getElementById("cardCompany").textContent = company || "Tech Solutions Inc.";
+      document.getElementById("cardPhone").textContent = phone ? `📞 ${phone}` : "+123 456 7890";
+      document.getElementById("cardEmail").textContent = email || "john.doe@example.com";
+      document.getElementById("cardWebsite").textContent = website || "www.techsolutions.com";
+      document.getElementById("cardDescription").textContent = description || "Passionate about coding.";
+    }
+  </script>
+</body>
+</html>

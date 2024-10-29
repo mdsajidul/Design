@@ -1,0 +1,165 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Body Style */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background-color: #e7e7e7;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .sidebar h3 {
+        margin-bottom: 15px;
+    }
+
+    .sidebar label {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .sidebar input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: none;
+        font-size: 14px;
+    }
+
+    .sidebar button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #ffd60a;
+        color: #333;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .sidebar button:hover {
+            background-color: #ffae00;
+        }
+
+/* Business Cards Container */
+.business-cards-container {
+    display: flex;
+    flex-direction: column; /* Align cards in a column */
+    align-items: center; /* Center cards horizontally */
+    margin-left: 300px; /* Adjust based on sidebar width */
+}
+
+/* Business Card Styles */
+.business-card {
+    width: 400px;
+    height: calc(400px * 2 / 3.5); /* Standard business card aspect ratio */
+    padding: 20px;
+    background: linear-gradient(135deg, #1d1d1d, #4a4a4a);
+    border-radius: 15px;
+    color: #ffffff;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin-bottom: 20px; /* Space between cards */
+    overflow: hidden;
+}
+
+    .business-card.back {
+        background: linear-gradient(135deg, #4a4a4a, #1d1d1d);
+    }
+
+/* Information inside card */
+.info h2,
+.back-info h2 {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.title {
+    font-size: 1.2em;
+    margin: 5px 0 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #ffd60a;
+}
+
+.company {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ffd60a;
+}
+
+/* Contact Information */
+.contact-info {
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    padding-top: 10px;
+}
+
+.contact {
+    font-size: 0.9em;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+    .contact i {
+        margin-right: 8px;
+        color: #ffd60a;
+        transition: transform 0.3s;
+    }
+
+    .contact:hover i {
+        transform: scale(1.2);
+    }
+
+    .contact:hover {
+        color: #ffd60a;
+    }
+
+/* Backside Information */
+.back-info {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    height: 100%; /* Full height of the card */
+}
+
+    .back-info p {
+        margin: 10px 0;
+        text-align: center; /* Center align text */
+    }
+
+.social a {
+    color: #ffd60a;
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+    .social a:hover {
+        transform: scale(1.2);
+    }
