@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Card Store</title>
+    <link rel="stylesheet" href="business-card.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>Business Card Store</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#cart">🛒 Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Stunning Business Cards for Every Professional</h2>
+            <p>Make a lasting impression with our custom-designed business cards.</p>
+            <a href="#products" class="cta-button">View Designs</a> <!-- Bold and no underline -->
+        </div>
+    </section>
+
+    <section id="products">
+        <h2>Our Business Card Designs</h2>
+        <div class="product-grid">
+            <!-- Product 1 with Image Preview -->
+            <div class="product-card">
+                <img src="Design 1.jpg" alt="Design 1 Preview" class="design-preview">
+                <h3>Elegant Design</h3>
+                <p>Price: <span class="price">Tk 30,000</span></p> <!-- Example price -->
+                <button class="customize-button" onclick="location.href='card1.html'">Customize This</button>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="design-preview" style="background-color: #6f5b9a;"></div>
+                <h3>Modern Design</h3>
+                <p>Price: <span class="price">Tk 40,000</span></p>
+                <button class="customize-button" onclick="location.href='card2.html'">Customize This</button>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="design-preview" style="background-color: #ffdd57;"></div>
+                <h3>Classic Design</h3>
+                <p>Price: <span class="price">Tk 35,000</span></p>
+                <button class="customize-button" onclick="location.href='card3.html'">Customize This</button>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="design-preview" style="background-color: #e03e3e;"></div>
+                <h3>Creative Design</h3>
+                <p>Price: <span class="price">Tk 50,000</span></p>
+                <button class="customize-button" onclick="location.href='card4.html'">Customize This</button>
+            </div>
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="design-preview" style="background-color: #7f8c8d;"></div>
+                <h3>Minimalist Design</h3>
+                <p>Price: <span class="price">Tk 25,000</span></p>
+                <button class="customize-button" onclick="location.href='https://mdsajidul.github.io/NextGenPC/customize-minimalist.html'">Customize This</button>
+            </div>
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="design-preview" style="background-color: #3498db;"></div>
+                <h3>Corporate Design</h3>
+                <p>Price: <span class="price">Tk 45,000</span></p>
+                <button class="customize-button" onclick="location.href='https://mdsajidul.github.io/NextGenPC/customize-corporate.html'">Customize This</button>
+            </div>
+            <!-- Product 7 -->
+            <div class="product-card">
+                <div class="design-preview" style="background-color: #e74c3c;"></div>
+                <h3>Artistic Design</h3>
+                <p>Price: <span class="price">Tk 55,000</span></p>
+                <button class="customize-button" onclick="location.href='https://mdsajidul.github.io/NextGenPC/customize-artistic.html'">Customize This</button>
+            </div>
+            <!-- Product 8 -->
+            <div class="product-card">
+                <div class="design-preview" style="background-color: #2ecc71;"></div>
+                <h3>Innovative Design</h3>
+                <p>Price: <span class="price">Tk 60,000</span></p>
+                <button class="customize-button" onclick="location.href='https://mdsajidul.github.io/NextGenPC/customize-innovative.html'">Customize This</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Welcome to our Business Card Store! We offer a wide variety of professionally designed business cards that cater to all your needs. Our designs are customizable to suit your personal style and business branding. Our goal is to help you make a great first impression!</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+    </footer>
+
+    <script src="business-card.js"></script> <!-- Link to the JS file -->
+</body>
+</html>
