@@ -1,0 +1,182 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Darker background for elegance */
+    color: #ffffff;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 320px; /* Slightly reduced width for a sleeker look */
+    padding: 30px; /* Increased padding for a more spacious feel */
+    background: #1a1a1a; /* Darker shade for sophistication */
+    color: #ffffff;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid rgba(255, 215, 0, 0.2); /* Subtle border */
+}
+
+    .sidebar h3 {
+        margin-bottom: 25px;
+        font-size: 2em; /* Larger font for prominence */
+        color: #FFD700;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+    }
+
+    .sidebar label {
+        margin-top: 20px;
+        font-size: 1em; /* Slightly larger label font */
+        color: #ddd;
+    }
+
+    .sidebar input,
+    .sidebar textarea {
+        width: 100%;
+        padding: 12px; /* Increased padding */
+        margin: 8px 0 15px;
+        border-radius: 8px; /* Rounded edges for a softer look */
+        border: 1px solid #444; /* Subtle border for inputs */
+        background: #2a2a2a; /* Softer background for inputs */
+        color: #ffffff;
+        font-size: 1em;
+        transition: border-color 0.3s ease;
+    }
+
+        .sidebar input:focus,
+        .sidebar textarea:focus {
+            border-color: #FFD700; /* Highlight border on focus */
+        }
+
+    .sidebar button {
+        padding: 12px 30px; /* Slightly larger button */
+        background-color: #FFD700;
+        color: #111111;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 1em; /* Increase font size */
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform */
+    }
+
+        .sidebar button:hover {
+            background-color: #FFC300;
+            transform: translateY(-2px); /* Slight lift effect on hover */
+        }
+
+/* Card Container */
+.business-cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 360px; /* Adjusted for new sidebar width */
+    gap: 30px; /* Increased gap for better separation */
+}
+
+/* Business Card */
+.business-card {
+    width: 380px; /* Increased width for a more luxurious appearance */
+    height: 220px; /* Increased height for better layout */
+    padding: 20px;
+    background: #1e1e1e;
+    color: #ffffff;
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); /* More pronounced shadow for depth */
+    border: 2px solid #FFD700;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth shadow change */
+}
+
+    .business-card.front {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .business-card.front .monogram {
+            font-size: 3.5em; /* Larger monogram */
+            color: #FFD700;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Soft shadow */
+        }
+
+        .business-card.front .info h2 {
+            font-size: 2em; /* Larger name font */
+            font-weight: 700;
+            color: #FFD700;
+        }
+
+.title,
+.company {
+    color: #cccccc;
+    font-weight: 500; /* Slightly bolder for clarity */
+}
+
+.business-card.back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+.back-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact-info {
+    color: #FFD700;
+}
+
+    .contact-info p {
+        font-size: 1em; /* Increased font size for contact info */
+        margin: 8px 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .contact-info i {
+        margin-right: 10px;
+        color: #FFD700;
+    }
+
+/* Hover Effect */
+.business-card:hover {
+    transform: scale(1.05); /* Slightly larger on hover */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7); /* Enhanced shadow on hover */
+}
+
+/* Print */
+@media print {
+    .sidebar {
+        display: none;
+    }
+
+    .business-cards-container {
+        margin-left: 0;
+    }
+
+    .business-card {
+        box-shadow: none;
+        border: none; /* Remove border for print */
+    }
+}
