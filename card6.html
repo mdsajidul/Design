@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Business Card</title>
+    <link rel="stylesheet" href="card6.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="card.js" defer></script>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h3>Customize Your Card</h3>
+        <form id="cardForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" value="John Doe" oninput="updateCard()" />
+
+            <label for="title">Title:</label>
+            <input type="text" id="title" value="Marketing Specialist" oninput="updateCard()" />
+
+            <label for="company">Company:</label>
+            <input type="text" id="company" value="Creative Solutions" oninput="updateCard()" />
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" value="+1 234 567 890" oninput="updateCard()" />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" value="john.doe@creativesolutions.com" oninput="updateCard()" />
+
+            <label for="website">Website:</label>
+            <input type="text" id="website" value="www.creativesolutions.com" oninput="updateCard()" />
+
+            <label for="description">Description:</label>
+            <textarea id="description" oninput="updateCard()">Creative thinker with a passion for design.</textarea>
+
+            <button type="button" onclick="downloadCard()">Download</button>
+        </form>
+    </div>
+
+    <div class="business-cards-container">
+        <div class="business-card front" id="businessCard">
+            <div class="card-content">
+                <h1 id="cardName" class="name">John Doe</h1>
+                <p class="title" id="cardTitle">Marketing Specialist</p>
+                <p class="company" id="cardCompany">Creative Solutions</p>
+            </div>
+        </div>
+
+        <div class="business-card back">
+            <div class="contact-info">
+                <p id="cardPhoneNumber">+1 234 567 890</p>
+                <p id="cardEmailAddress">john.doe@creativesolutions.com</p>
+                <p id="cardWebsiteLink">www.creativesolutions.com</p>
+                <p id="cardDescription">Creative thinker with a passion for design.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

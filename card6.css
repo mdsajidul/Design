@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.sidebar {
+    width: 320px;
+    padding: 30px;
+    background: #1a1a1a;
+    color: #ffffff;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid rgba(255, 215, 0, 0.2);
+    overflow-y: auto; /* Ensure the sidebar is scrollable */
+}
+
+    /* Custom scrollbar styles */
+    .sidebar::-webkit-scrollbar {
+        width: 12px; /* Width of the scrollbar */
+    }
+
+    .sidebar::-webkit-scrollbar-thumb {
+        background: #FFD700; /* Color of the scrollbar handle */
+        border-radius: 10px; /* Round corners for the scrollbar handle */
+    }
+
+    .sidebar::-webkit-scrollbar-track {
+        background: #2a2a2a; /* Color of the scrollbar track */
+    }
+
+    .sidebar::-webkit-scrollbar-thumb:hover {
+        background: #FFC300; /* Change color on hover */
+    }
+
+    .sidebar h3 {
+        margin-bottom: 25px;
+        font-size: 2em;
+        color: #FFD700;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .sidebar label {
+        margin-top: 20px;
+        font-size: 1em;
+        color: #ddd;
+    }
+
+    .sidebar input,
+    .sidebar textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0 15px;
+        border-radius: 8px;
+        border: 1px solid #444;
+        background: #2a2a2a;
+        color: #ffffff;
+        font-size: 1em;
+        transition: border-color 0.3s ease;
+    }
+
+        .sidebar input:focus,
+        .sidebar textarea:focus {
+            border-color: #FFD700;
+        }
+
+    .sidebar button {
+        padding: 12px 30px;
+        background-color: #FFD700;
+        color: #111111;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 1em;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+        .sidebar button:hover {
+            background-color: #FFC300;
+            transform: translateY(-2px);
+        }
+
+.business-cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 360px;
+    gap: 30px;
+}
+
+.business-card {
+    width: 3.5in;
+    height: 2in;
+    padding: 15px;
+    background: linear-gradient(135deg, #4B79A1 0%, #283E51 100%);
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    .business-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+.card-content {
+    text-align: center;
+}
+
+.name {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #FFD700;
+    text-transform: uppercase;
+}
+
+.title,
+.company {
+    color: #FFC300;
+    font-weight: 500;
+    margin: 4px 0;
+}
+
+.contact-info {
+    text-align: center;
+    color: #E0E0E0;
+    margin-top: 5px;
+}
+
+    .contact-info p {
+        margin: 2px 0;
+        font-size: 0.9em;
+    }
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        padding: 20px;
+    }
+
+    .business-cards-container {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .business-card {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar h3 {
+        font-size: 1.5em;
+    }
+
+    .sidebar label {
+        font-size: 0.9em;
+    }
+
+    .sidebar input,
+    .sidebar textarea {
+        font-size: 0.9em;
+    }
+
+    .sidebar button {
+        font-size: 0.9em;
+    }
+
+    .business-card {
+        padding: 10px;
+    }
+
+    .name {
+        font-size: 1.5em;
+    }
+
+    .title,
+    .company {
+        font-size: 0.9em;
+    }
+}
+
+@media print {
+    .sidebar {
+        display: none;
+    }
+
+    .business-cards-container {
+        margin-left: 0;
+    }
+
+    .business-card {
+        box-shadow: none;
+    }
+}
