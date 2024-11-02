@@ -111,7 +111,7 @@ body {
     }
 
         .business-card.front .monogram {
-            font-size: 3.5em; /* Larger monogram */
+            font-size: 2.5em; /* Larger monogram */
             color: #FFD700;
             font-weight: bold;
             margin-bottom: 15px;
