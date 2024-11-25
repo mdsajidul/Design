@@ -1,61 +1,50 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Business Services</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>NextGenPC - Computer Course</title>
+    <link rel="stylesheet" href="style.css"> <!-- Updated path -->
+    <script src="script.js" defer></script> <!-- Updated path -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <script defer src="theme-switcher.js"></script>
+
 </head>
 <body>
-    <header class="header">
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About Us</a></li>
-            </ul>
-        </nav>
-    </header>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Welcome to Our Design Services</h2>
-            <p>Your one-stop solution for premium business designs.</p>
-            <div class="search-bar">
-                <input type="text" placeholder="Search for designs...">
-                <button>Search</button>
+
+    <a href="business-card.html" class="btn">Home</a>
+    <section class="intro">
+        <div class="container">
+            <h1>আমাদের ডিজাইন ডিজাইনসমূহ</h1>
+            <div class="btn-container">
+                <a href="business-card.html" class="btn">Business Card</a>
+                <a href="cv.html" class="btn">CV</a>
+                <a href="website-theme.html" class="btn">Website Theme</a>
+
+
             </div>
         </div>
     </section>
 
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <h3>Business Card</h3>
-                <p>Get a premium business card design to elevate your professional image.</p>
-                <button onclick="location.href='business-card.html'">Next</button>
-            </div>
-            <div class="service-card">
-                <h3>CV</h3>
-                <p>Craft a stunning CV that stands out to employers.</p>
-                <button onclick="location.href='cv.html'">Next</button>
-            </div>
-            <div class="service-card">
-                <h3>Website Theme</h3>
-                <p>Design a beautiful website theme for your business.</p>
-                <button onclick="location.href='website-theme.html'">Next</button>
-            </div>
-        </div>
-    </section>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load the saved theme from localStorage
+            const theme = localStorage.getItem('theme') || 'default-theme.css';
+            document.getElementById('theme-link').setAttribute('href', theme);
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are dedicated to providing top-notch design services to help you succeed in your business endeavors.</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Your Company Name. All Rights Reserved.</p>
-    </footer>
+            // Fetch notice from Google Apps Script
+            fetch('https://script.google.com/macros/s/AKfycbxeuJHos6kPwGxtMEXDzDiMGctTJWwYysRVe_XVfytg9XOvkF1IStTtWy0PoBkHWlmg/exec')
+                .then(response => response.text())
+                .then(notice => {
+                    document.getElementById('notice').textContent = notice;
+                })
+                .catch(error => {
+                    console.error('Error fetching notice:', error);
+                });
+        });</script>
+    <script src="theme-switcher.js"></script> <!-- Include the JavaScript file -->
 </body>
 </html>
