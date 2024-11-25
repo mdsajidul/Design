@@ -1,226 +1,167 @@
+/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* CSS Variables for Consistency */
+:root {
+    --primary-bg: #333;
+    --secondary-bg: #444;
+    --text-color: #f5f5f5;
+    --highlight-color: #d4af37;
+    --header-bg: linear-gradient(135deg, #1f1f1f, #3b3b3b);
+}
+
+/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f8f9fa;
-    color: #343a40;
-    line-height: 1.6;
+    color: var(--text-color);
+    background: linear-gradient(to right, #0a0a0a, var(--primary-bg));
 }
 
-.header {
-    background-color: #4B3C7A;
-    color: white;
-    padding: 1.5em 0;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-    .header nav ul {
-        list-style-type: none;
-    }
-
-        .header nav ul li {
-            display: inline;
-            margin: 0 1.5em;
-        }
-
-            .header nav ul li a {
-                color: white;
-                text-decoration: none;
-                transition: color 0.3s, transform 0.3s;
-            }
-
-                .header nav ul li a:hover {
-                    color: #ffdd57;
-                    transform: scale(1.1);
-                }
-
-.hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/1600x900/?business,office');
-    background-size: cover;
-    padding: 8em 0;
-    color: white;
-    text-align: center;
+/* Header Styles */
+header {
+    background: var(--header-bg);
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
     position: relative;
 }
 
-.hero-content {
-    max-width: 700px;
-    margin: auto;
-    position: relative;
-    z-index: 1;
-}
-
-.hero h2 {
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-}
-
-.hero p {
-    font-size: 1.2em;
-    margin-bottom: 1.5em;
-}
-
-.search-bar {
+.header nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1em;
 }
 
-.hero input {
-    padding: 0.8em;
-    margin-right: 0.5em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 250px;
+nav ul {
+    list-style: none;
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content: center;
+    padding: 0;
+    flex-wrap: wrap; /* Allow wrapping for small screens */
 }
 
-.hero button,
-.service-card button {
-    padding: 0.8em 1.5em;
-    background-color: #ffdd57;
-    color: #4B3C7A;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    position: relative; /* Enable positioning for shadow effects */
-    overflow: hidden; /* Clip the pseudo-element */
+    /* Header Button Styles */
+    nav ul li {
+        margin: 0 10px; /* Margin between buttons */
+    }
+
+.btn {
+    display: flex; /* Flexbox for button content */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    width: 150px; /* Fixed width for all buttons */
+    height: 50px; /* Fixed height for all buttons */
+    padding: 10px; /* Padding inside buttons */
+    text-decoration: none;
+    background: linear-gradient(145deg, var(--primary-bg), var(--secondary-bg));
+    color: var(--text-color);
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+    font-size: 1.1em;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
-    .hero button::after,
-    .service-card button::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.3);
-        top: 0;
-        left: 0;
-        border-radius: 5px;
-        transform: translateY(-100%);
-        transition: transform 0.3s;
-        z-index: 0; /* Behind the button text */
+    /* Button Hover Effect */
+    .btn:hover {
+        background: linear-gradient(145deg, var(--secondary-bg), var(--primary-bg));
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 1);
+        color: var(--highlight-color);
     }
 
-    .hero button:hover,
-    .service-card button:hover {
-        background-color: #f9c200;
-        transform: translateY(-3px); /* Slight lift */
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-        .hero button:hover::after,
-        .service-card button:hover::after {
-            transform: translateY(0); /* Reveal the overlay */
-        }
-
-    .hero button span,
-    .service-card button span {
-        position: relative;
-        z-index: 1; /* On top of the overlay */
-    }
-
-#services {
-    padding: 2em 0;
+/* Intro Section */
+.intro {
+    padding: 80px 20px;
     text-align: center;
 }
 
-    #services h2 {
-        margin-bottom: 2em;
+    .intro h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        color: var(--text-color);
+        text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.8);
+        transition: color 0.3s ease, transform 0.3s ease;
     }
 
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2em;
-    padding: 3em 1em;
+    .intro p {
+        font-size: 1.2em;
+        margin-bottom: 40px;
+        color: var(--text-color);
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping in case of small screens */
+    gap: 10px; /* Space between buttons */
+    padding: 20px; /* Aesthetic padding */
 }
 
-.service-card {
-    background-color: white;
-    border: 1px solid #dee2e6;
-    border-radius: 5px;
-    padding: 2em;
+.btn {
+    flex: 1 1 150px; /* Ensure buttons are flexible */
+    padding: 15px; /* Uniform padding for buttons */
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: linear-gradient(145deg, var(--primary-bg), var(--secondary-bg));
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+    font-size: 1.1em;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
-    .service-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    .service-card h3 {
-        margin-bottom: 1em;
-        color: #4B3C7A;
-    }
-
-#about {
-    padding: 2em 1em;
-    text-align: center; /* Center align the text */
-}
-
-    #about h2 {
-        margin-bottom: 1em;
-        color: #4B3C7A; /* Add color for the heading */
-    }
-
-    #about p {
-        max-width: 600px; /* Limit the width for better readability */
-        margin: 0 auto; /* Center the paragraph */
-    }
-
-/* Custom Scrollbar Styles for WebKit Browsers */
+/* Scrollbar Styles */
 ::-webkit-scrollbar {
-    width: 12px; /* Width of the scrollbar */
+    width: 12px;
+    height: 12px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f0f0f0; /* Color of the scrollbar track */
-    border-radius: 10px; /* Rounded corners for the track */
+    background: #222;
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #4B3C7A; /* Color of the scrollbar thumb */
-    border-radius: 10px; /* Rounded corners for the thumb */
-    transition: background 0.3s ease; /* Smooth transition */
+    background: #444;
+    border-radius: 10px;
 }
 
     ::-webkit-scrollbar-thumb:hover {
-        background: #6f5b9a; /* Color when hovering over the thumb */
+        background: #d4af37;
+    }
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: row; /* Maintain row layout for tablets and larger phones */
     }
 
-/* For Firefox */
-* {
-    scrollbar-width: thin; /* Make the scrollbar thin */
-    scrollbar-color: #4B3C7A #f0f0f0; /* Thumb color and track color */
+    .btn {
+        flex: 1 1 auto; /* Ensure buttons are flexible */
+        margin: 5px; /* Margin for space between buttons */
+        min-width: 100px; /* Minimum width to prevent overlap */
+    }
 }
 
-/* For Internet Explorer and Edge */
-body {
-    -ms-overflow-style: -ms-autohiding-scrollbar; /* Hide scrollbar when not scrolling */
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: row; /* Keep buttons in a single row */
+    }
+
+    .btn {
+        flex: 1 1 auto; /* Allow buttons to stretch while maintaining flexibility */
+        margin: 5px; /* Margin for space between buttons */
+    }
 }
 
-footer {
-    text-align: center;
-    padding: 2em 0;
-    background-color: #343a40;
-    color: white;
-    position: relative;
+.hover-effect {
+    color: var(--text-color); /* Default text color */
+    transition: color 0.3s ease; /* Smooth transition */
 }
 
-    footer p {
-        margin: 0;
+    .hover-effect:hover {
+        color: var(--highlight-color); /* Change color on hover */
     }
